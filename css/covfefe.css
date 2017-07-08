@@ -1,0 +1,22 @@
+.carousel-caption {
+    color: black;
+    right: 58%;
+    text-align: left;
+    max-width: 500px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+}
+
+.carousel-indicators li {
+    background-color: #999;
+}
+
+.carousel-indicators .active {
+    background-color: #444;
+}
+
+p {
+    white-space: pre;
+}
