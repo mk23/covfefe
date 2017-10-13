@@ -8,10 +8,10 @@ $(document).ready(function() {
 
 	$('<link/>')
 	.attr('rel', 'stylesheet')
-	.attr('href', name+'.css')
+	.attr('href', 'content/'+name+'.css')
 	.appendTo('head');
 
-    $.get(name+'.txt', function(data) {
+    $.get('content/'+name+'.txt', function(data) {
         $.each(data.split(/\n\n/), function(k, v) {
 			v = $.trim(v);
 
