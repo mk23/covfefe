@@ -1,56 +1,44 @@
 $(document).ready(function() {
-    $.get('covfefe.txt', function(data) {
+	window.location.hash = '';
+
+	name = window.location.href.split('?').pop().split('#')[0].replace(/[^a-z]/ig, '');
+	if (!name || window.location.href.indexOf('?') == -1) {
+		name = 'default';
+	}
+
+	$('<link/>')
+	.attr('rel', 'stylesheet')
+	.attr('href', name+'.css')
+	.appendTo('head');
+
+    $.get(name+'.txt', function(data) {
         $.each(data.split(/\n\n/), function(k, v) {
-            $('.carousel-indicators').append(
-                $('<li/>')
-                .attr('data-target', '#carousel-covfefe')
-                .attr('data-slide-to', k + 1)
-            );
-            $('.carousel-inner').append(
-                $('<div/>')
-                .addClass('item')
-                .append(
-                    $('<div/>')
-                    .addClass('container')
-                    .append(
-                        $('<div/>')
-                        .addClass('carousel-caption')
-                        .append(
-                            $('<p/>')
-                            .text($.trim(v))
-                        )
-                    )
-                )
-            );
+			v = $.trim(v);
+
+			if (k == 0) {
+				$('title').text(v);
+				v = $('<h1/>').text(v);
+			}
+
+			$('ul.slides-container').append(
+				$('<li/>').append(
+					$('<div/>')
+					.addClass('container')
+					.append(v)
+				)
+			);
         });
-    });
 
-    $(window)
-        .resize(function() {
-            $('.item').height($(window).height());
+        $('#slides')
+        .superslides({
+            hashchange: true,
         })
-        .keyup(function(e) {
-            if (e.which == 37) { // left
-                $('.carousel').carousel('prev');
-            } else if (e.which == 39) { // right
-                $('.carousel').carousel('next');
-            }
+        .hammer().bind('swipeleft', function() {
+            $(this).data('superslides').animate('next');
         })
-        .trigger('resize');
-
-    $('.carousel')
-    .carousel({
-        interval: 2000
-    })
-    .on('slid.bs.carousel', function() {
-        if ($('li.active').is(':last-child')) {
-            $('.carousel')
-                .carousel('pause')
-                .fireworks({
-                    opacity: 0.1
-                });
-        } else {
-            $('canvas').remove();
-        }
+        .hammer().bind('swiperight', function() {
+            $(this).data('superslides').animate('right');
+        })
+		.removeClass('hidden');
     });
 });

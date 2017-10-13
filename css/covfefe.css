@@ -1,22 +1,27 @@
-.carousel-caption {
-    color: black;
-    right: 58%;
-    text-align: left;
-    max-width: 500px;
-    left: auto;
+a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.icon-large {
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 5vw;
+}
+
+.container {
+    position: fixed;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
-    bottom: initial;
-}
-
-.carousel-indicators li {
-    background-color: #999;
-}
-
-.carousel-indicators .active {
-    background-color: #444;
-}
-
-p {
+    transform: translate(-50%, -50%);
     white-space: pre;
-}
+    font-size: 3vw;
+};

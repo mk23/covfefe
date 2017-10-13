@@ -1,0 +1,23 @@
+body {
+    /* non-css3 browsers */
+    background: #9999ee;
+    /* WebKit */
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#ccccee),
+        to(#6666ee)
+    );
+    /* FireFox */
+    background: -moz-linear-gradient(
+        top,
+        #ccccee,
+        #6666ee,
+    );
+    /* IE */
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr=#ccccee,
+        endColorstr=#6666ee
+    );
+}

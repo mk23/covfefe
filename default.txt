@@ -1,0 +1,7 @@
+slides
+
+<a href="index.html?covfefe">Ode to #Covfefe, 2016</a>
+<!--
+<a href="index.html?spinoffs">Breaking Bad Spinoffs</a>
+<a href="index.html?predictions">Game of Thrones Predictions</a>
+-->

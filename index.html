@@ -4,37 +4,24 @@
         <title>Ode to Covfefe</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/superslides.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/covfefe.css">
     </head>
 
     <body>
-        <div id="carousel-covfefe" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-covfefe" data-slide-to="0" class="active"></li>
-            </ol>
-
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Ode to Covfefe</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <a class="left carousel-control" href="#carousel-covfefe" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-covfefe" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+        <div id="slides" class="hidden">
+            <ul class="slides-container"></ul>
+            <nav class="slides-navigation">
+                <a href="#" class="next"><i class="fa fa-chevron-circle-right icon-large"></i></a>
+                <a href="#" class="prev"><i class="fa fa-chevron-circle-left icon-large"></i></a>
+            </nav>
         </div>
-
-        <script src="js/jquery.js"></script>
-        <script src="js/jquery.fireworks.js"></script>
-        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/hammer.min.js"></script>
+        <script src="js/jquery.hammer.js"></script>
+        <script src="js/jquery.animate-enhanced.min.js"></script>
+        <script src="js/jquery.superslides.min.js"></script>
         <script src="js/covfefe.js"></script>
     </body>
 </html>
